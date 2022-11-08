@@ -6,7 +6,9 @@ import java.util.Observable;
 
 import model.element.DisplayableElement;
 import model.element.IDisplayableElement;
+import model.element.Permeability;
 import model.mobile.IMobile;
+import model.mobile.Rockford;
 
 
 public interface IMap {
@@ -41,12 +43,20 @@ public interface IMap {
 	// Get DiamondCount
 	public int getDiamondCount();
 	
-	/*//return The mobile element character 
+	
+	//return The mobile element character 
 	public IMobile getMyCharacter();
 	
-	//Sets themobile element character - param character The player's character
+	//Sets the mobile element character - param character The player's character
 	public void setMyCharacter(IMobile character);
-	*/
 	
+	/*
+	 * return 
+	 * y the y
+	 * x the x
+	 * the permeability of the square at the given position
+	 */
+	
+	public Permeability getSquareIsOccupied(final int x, final int y);
 	
 }

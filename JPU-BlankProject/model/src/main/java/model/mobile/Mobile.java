@@ -1,8 +1,10 @@
 package model.mobile;
 
 import java.awt.Point;
+import java.io.IOException;
 
 import fr.exia.showboard.IBoard;
+import model.MotionLess.MotionLessElementFactory;
 import model.element.DisplayableElement;
 import model.element.Permeability;
 import model.element.Sprite;
@@ -21,7 +23,7 @@ public class Mobile extends DisplayableElement  implements IMobile /*extends Dis
 	IMap map;
 	
 	
-protected void die() {
+public void die() {
 	this.alive= false;
 	this.setHasMoved();
 	
@@ -161,7 +163,7 @@ public Mobile(int x, int y, Sprite sprite, IMap map, Permeability permeability) 
 	}
 
 	
-	private boolean pawnMovementPermissionsTo(userOrder direction) {
+	protected Boolean pawnMovementPermissionsTo(userOrder direction) {
 		Point desiredPosition = this.getPositionOfUserOrder(direction);
 		for (IMobile pawn : this.getMap().getPawns()) {
 			if (pawn.getPosition().equals(desiredPosition)) {
@@ -176,7 +178,7 @@ public Mobile(int x, int y, Sprite sprite, IMap map, Permeability permeability) 
 		return true;
 	}
 
-	private Point getPositionOfUserOrder(userOrder direction) {
+	protected Point getPositionOfUserOrder(userOrder direction) {
 		Point ciblePosition = null;
 		switch (direction) {
 		case UP:
@@ -223,6 +225,38 @@ public Mobile(int x, int y, Sprite sprite, IMap map, Permeability permeability) 
 	@Override
 	public boolean isFalling() {
 		return fallingspeed;
+	}
+	
+	// fill empty space by rockford as it moves
+	
+	public void blackGroundFilling() throws IOException {
+		map.setOnTheMap(this.getX(), this.getY(), MotionLessElementFactory.createBlackGround());
+		this.getMap().getOnTheMap(getX(), getY()).getSprite().loadImage();
+	}
+
+	@Override
+	public void removeFromBoard() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void followCharacterMethod() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public userOrder getLastWallTouched() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	@Override
+	public  void setLastWallTouched(userOrder direction) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

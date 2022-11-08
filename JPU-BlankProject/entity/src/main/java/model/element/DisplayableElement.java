@@ -5,36 +5,37 @@ import java.awt.Image;
 public abstract class DisplayableElement implements IDisplayableElement {
 
 	
-	
+	private Sprite sprite;
+	private Permeability permeability;
 	
 	public DisplayableElement(Sprite sprite, Permeability permability) {
-		// TODO Auto-generated constructor stub
+		this.setSprite(sprite);
+		this.setPermeability(permability);
 	}
 
 	@Override
 	public Sprite getSprite() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.sprite;
 	}
 public void setSprite(Sprite sprite) {
-	
+	this.sprite=sprite;
 }
 
 	@Override
 	public Permeability getPermeability() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.permeability;
 	}
 	public void setPermeability(Permeability permeability) {
-		
+		this.permeability=permeability;
 	}
 	
 
 	@Override
 	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getSprite().getImage();
 	}
+
+	
 	
 
 }

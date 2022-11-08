@@ -10,5 +10,5 @@ public interface IBoulderDashModel {
 	public IMobile getDiamond();
 	public IMobile getEnemy();
 	
-
+	public void movePawns();
 }

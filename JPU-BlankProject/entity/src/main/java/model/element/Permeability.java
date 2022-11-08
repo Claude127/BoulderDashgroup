@@ -4,4 +4,6 @@ public enum Permeability {
 
 	BLOCKING,
 	PENETRABLE,
+	TAKEN,
+	
 }

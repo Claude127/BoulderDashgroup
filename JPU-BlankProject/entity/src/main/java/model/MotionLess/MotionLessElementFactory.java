@@ -32,7 +32,7 @@ public MotionLessElement createBlueWall() {
 	
 }
 	
-public MotionLessElement createBlackGround() {
+public static MotionLessElement createBlackGround() {
 	return blackground;
 	
 }

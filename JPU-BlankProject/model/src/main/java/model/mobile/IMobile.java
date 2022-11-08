@@ -17,6 +17,12 @@ public interface IMobile extends IPawn ,IDisplayableElement{
 	public boolean isAlive();
 	public boolean canMoveTo(userOrder direction);
 	public boolean isFalling();
+	public void followCharacterMethod();
 	public Point getPosition();
+	public void removeFromBoard();
+	public boolean isCrashed();
+	public userOrder getLastWallTouched();
+	public void setLastWallTouched(userOrder left);
+	public void die();
 	
 }

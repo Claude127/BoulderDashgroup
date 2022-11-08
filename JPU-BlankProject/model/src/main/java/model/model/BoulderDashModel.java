@@ -3,6 +3,7 @@ package model.model;
 import model.mobile.IMobile;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class BoulderDashModel implements IBoulderDashModel{
 	IMap map;
@@ -59,4 +60,17 @@ public void setEnemy(IMobile enemy) {
 	this.enemy=enemy;
 }
 
+@Override
+public void movePawns() {
+	ArrayList<IMobile> copyPawns = new ArrayList<>(this.getMap().getPawns());
+	
+	for (IMobile pawn : copyPawns) {
+		pawn.followCharacterMethod();
+	}
+
+	if (this.getRockford().isCrashed())
+		 this.getRockford().die();
 }
+}
+
+
