@@ -5,8 +5,8 @@ import model.mobile.IMobile;
 public interface IBoulderDashModel {
 	
 	public IMap getMap() ;
-	public  IMobile Rockford();
-	public IMobile Rock();
+	public  IMobile getRockford();
+	public IMobile getRock();
 	public IMobile getDiamond();
 	public IMobile getEnemy();
 	

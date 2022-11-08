@@ -2,7 +2,10 @@ package model.mobile;
 
 import java.awt.Point;
 
-public interface IMobile {
+import fr.exia.showboard.IPawn;
+import model.element.IDisplayableElement;
+
+public interface IMobile extends IPawn ,IDisplayableElement{
 
 	public void moveUp();
 	public void moveDown();
@@ -12,7 +15,8 @@ public interface IMobile {
 	public int getX();
 	public int getY();
 	public boolean isAlive();
-	public boolean isDestructible();
+	public boolean canMoveTo(userOrder direction);
+	public boolean isFalling();
 	public Point getPosition();
 	
 }

@@ -5,10 +5,10 @@ import model.element.Sprite;
 
 public class BlackGround extends MotionLessElement{
 	
-	Sprite sprite =new Sprite('G',"BlackGround.png");
-
-	BlackGround(Sprite sprite, Permeability permability) {
-		super(sprite, permability);
+	final static Sprite sprite =new Sprite('G',"BlackGround.png");
+final static Permeability permeability = Permeability.BLOCKING;
+	BlackGround() {
+		super(sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
 

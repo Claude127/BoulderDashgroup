@@ -5,10 +5,10 @@ import model.element.Sprite;
 
 public class Earth extends MotionLessElement{
 
-	Sprite sprite =new Sprite('E',"Earth.png");
-	
-	Earth(Sprite sprite, Permeability permability) {
-		super(sprite, permability);
+	final static Sprite sprite =new Sprite('E',"Earth.png");
+	final static Permeability permeability = Permeability.BLOCKING;
+	Earth() {
+		super(sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
 

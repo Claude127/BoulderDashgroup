@@ -1,59 +1,62 @@
 package model.model;
 
 import model.mobile.IMobile;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class BoulderDashModel implements IBoulderDashModel{
 	IMap map;
 	IMobile rockford;
 	IMobile rock;
-	IMobile Diamond;
-	IMobile Enemy;
+	IMobile diamond;
+	IMobile enemy;
 	
+	
+BoulderDashModel(final int mapId) throws SQLException,IOException{
+	super();
+	
+}
 	
 public IMap getMap() {
-	return map;
+	return this.map;
 
 }
 
 public void setMap(IMap map) {
-	
+	this.map = map;
 }
 
 @Override
-public IMobile Rockford() {
-	// TODO Auto-generated method stub
-	return null;
+public IMobile getRockford() {
+	return this.rockford;
 }
 
 public void setRockford(IMobile rockford) {
-	
+	this.rockford= rockford;
 }
 
 @Override
-public IMobile Rock() {
-	// TODO Auto-generated method stub
-	return null;
+public IMobile getRock() {
+	return this.rock;
 }
 public void setRock(IMobile rock) {
-	
+	this.rock=rock;
 }
 
 @Override
 public IMobile getDiamond() {
-	// TODO Auto-generated method stub
-	return null;
+	return this.diamond;
 }
 public void setDiamond(IMobile diamond ) {
-	
+	this.diamond=diamond;
 }
 
 @Override
 public IMobile getEnemy() {
-	// TODO Auto-generated method stub
-	return null;
+	return this.enemy;
 }
 public void setEnemy(IMobile enemy) {
-	
+	this.enemy=enemy;
 }
 
 }

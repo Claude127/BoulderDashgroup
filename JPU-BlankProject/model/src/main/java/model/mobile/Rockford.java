@@ -1,5 +1,7 @@
 package model.mobile;
 
+import java.io.IOException;
+
 import model.element.Permeability;
 import model.element.Sprite;
 import model.model.IMap;
@@ -13,8 +15,14 @@ public class Rockford extends Mobile {
 	Sprite spriteDie =new Sprite('H',"Die.png");
 
 	
-	public Rockford(int x, int y, Sprite sprite, IMap map, Permeability permeability) {
-		super(x, y, sprite, map, permeability);
+	public Rockford(int x, int y, Sprite sprite, IMap map) throws IOException {
+		super(x, y, sprite, map,Permeability.BLOCKING  );
+		spriteTurnLeft.loadImage();
+		spriteTurnRigth.loadImage();
+		spriteUp.loadImage();
+		spriteDown.loadImage();
+		spriteDie.loadImage();
+		sprite.loadImage();
 		// TODO Auto-generated constructor stub
 	}
 	public void moveUp() {
@@ -30,7 +38,8 @@ public class Rockford extends Mobile {
 	}
 	
 	public void moveLeft() {
-		
+		super.moveLeft();
+		this.setSprite(spriteTurnLeft);
 	}
 	
 	public void push() {

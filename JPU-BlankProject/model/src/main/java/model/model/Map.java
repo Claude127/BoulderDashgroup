@@ -3,6 +3,7 @@ package model.model;
 import java.util.Observable;
 import model.element.DisplayableElement;
 
+
 public class Map implements IMap{
 
 	int width;

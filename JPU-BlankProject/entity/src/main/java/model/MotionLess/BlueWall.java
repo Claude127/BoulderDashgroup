@@ -5,10 +5,10 @@ import model.element.Sprite;
 
 public class BlueWall extends MotionLessElement {
 
-	Sprite sprite =new Sprite('W',"BlueWall.png");
-	
-	BlueWall(final Sprite sprite, Permeability permability) {
-		super(sprite, permability);
+	final static Sprite sprite =new Sprite('W',"BlueWall.png");
+	final static Permeability permeability = Permeability.BLOCKING;
+	BlueWall() {
+		super(sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
 

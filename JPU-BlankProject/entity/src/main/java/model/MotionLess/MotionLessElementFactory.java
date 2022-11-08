@@ -1,18 +1,31 @@
 package model.MotionLess;
 
+import model.element.DisplayableElement;
+
 public class MotionLessElementFactory {
 
-	BlueWall bluewall= new BlueWall(null, null);
-	BlackGround blackground = new BlackGround (null, null);
-	ExitWall exitwall = new ExitWall(null, null);
-	Earth earth = new Earth(null, null);
-	MotionLessElement[] motionelement= {bluewall,blackground,earth,exitwall};
+	// we create a constant of each motionless element 
+	private static BlueWall bluewall= new BlueWall();
+	private static BlackGround blackground = new BlackGround ();
+	private static ExitWall exitwall = new ExitWall();
+	private static Earth earth = new Earth();
 	
+	//this array is used to get char from symbol
+	MotionLessElement[] motionelements= {bluewall,blackground,earth,exitwall};
 	
+	/* that to get the motionless element from file symbol 
+	 * and return the motionless element from file symbol
+	 */
 public MotionLessElement getFromFileSymbol(char fileSymbol) {
-	return null;
-	
+	for (final MotionLessElement motionlessElement : motionelements) {
+        if (motionlessElement.getSprite().getConsoleImage() == fileSymbol) {
+            return motionlessElement;
+        }
+    }
+    return earth;
 }
+	
+
 
 public MotionLessElement createBlueWall() {
 	return bluewall;

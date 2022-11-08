@@ -3,13 +3,22 @@ package model.element;
 import java.awt.Image;
 
 public class Sprite {
-
+//the element's Image
 	Image image;
+	
+//
 	String imageName;
+	
+// the console image 
 	char consoleImage;
+	
+	// attribrute for the is image loaded 
 	boolean imageLoaded;
 	
+	
 public Sprite(char character, String imageName){
+	this.setConsoleImage(character);
+	
 	
 }
 
