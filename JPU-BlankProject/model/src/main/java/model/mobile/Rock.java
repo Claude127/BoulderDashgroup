@@ -1,0 +1,25 @@
+package model.mobile;
+
+import model.element.Permeability;
+import model.element.Sprite;
+import model.model.IMap;
+
+public class Rock extends Mobile  {
+
+	Sprite sprite=new Sprite('R',"Rock.png");
+	
+	
+	public Rock(int x, int y, Sprite sprite, IMap map, Permeability permeability) {
+		super(x, y, sprite, map, permeability);
+		// TODO Auto-generated constructor stub
+	}
+	protected void fall() {
+		
+	}
+	
+	protected void roll(){
+		
+	}
+	
+
+}
